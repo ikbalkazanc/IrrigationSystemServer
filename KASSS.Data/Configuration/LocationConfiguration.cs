@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 
 namespace KASSS.Data.Configuration
 {
-    public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
+    public class LocationConfiguration : IEntityTypeConfiguration<Location>
     {
-        public void Configure(EntityTypeBuilder<Customer> builder)
+        public void Configure(EntityTypeBuilder<Location> builder)
         {
-
+            builder.HasKey(x => x.Id);
+            builder.ToTable("Locations");
         }
     }
 }

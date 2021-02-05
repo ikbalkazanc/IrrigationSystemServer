@@ -47,7 +47,7 @@ namespace KASSS.API
             services.AddControllers();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<ITokenService, TokenService>();
-            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped(typeof(ICustomerService<>),typeof(CustomerService<>));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IService<,>), typeof(Service<,>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();

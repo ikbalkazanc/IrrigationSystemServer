@@ -16,6 +16,11 @@ namespace KASSS.Data
         }
 
         public DbSet<RefreshToken> UserRefreshTokens { get; set; }
+        public DbSet<Device> Devices { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Button> Buttons { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Location> Locations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

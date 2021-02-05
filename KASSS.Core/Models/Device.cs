@@ -9,6 +9,7 @@ namespace KASSS.Core.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public int CustomerId { get; set; }
         public ICollection<Button> Buttons { get; set; }
         public ICollection<Slider> Sliders { get; set; }
         public Location Location { get; set; }
