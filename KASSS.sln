@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KASSS.Data", "KASSS.Data\KA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KASSS.Shared", "KASSS.Shared\KASSS.Shared.csproj", "{7D110194-1F30-4363-AAD2-2D475BFC3674}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KASSS.API", "KASSS.API\KASSS.API.csproj", "{07ADFE28-B5B8-4C21-B63B-6D4C0BC10A5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KASSS.API", "KASSS.API\KASSS.API.csproj", "{07ADFE28-B5B8-4C21-B63B-6D4C0BC10A5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{CE48A83C-45B4-4C1A-BB40-15FD6EE8405E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KASSS.UnitTest", "KASSS.UnitTest\KASSS.UnitTest.csproj", "{1EC82C4E-C35D-4110-B4E7-E96AA2716BAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +43,16 @@ Global
 		{07ADFE28-B5B8-4C21-B63B-6D4C0BC10A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07ADFE28-B5B8-4C21-B63B-6D4C0BC10A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07ADFE28-B5B8-4C21-B63B-6D4C0BC10A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EC82C4E-C35D-4110-B4E7-E96AA2716BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EC82C4E-C35D-4110-B4E7-E96AA2716BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EC82C4E-C35D-4110-B4E7-E96AA2716BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EC82C4E-C35D-4110-B4E7-E96AA2716BAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1EC82C4E-C35D-4110-B4E7-E96AA2716BAF} = {CE48A83C-45B4-4C1A-BB40-15FD6EE8405E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {34170CA0-5C5F-4844-B567-DB3DA751F748}

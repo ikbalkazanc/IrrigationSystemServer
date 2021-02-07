@@ -5,11 +5,13 @@ using KASSS.Core.Services;
 using KASSS.Core.Services.Common;
 using KASSS.Core.UnitOfWork;
 using KASSS.Data;
+using KASSS.Data.Repository;
 using KASSS.Data.Repository.Common;
 using KASSS.Data.UnitOfWork;
 using KASSS.Services.Service;
 using KASSS.Services.Service.Authentication;
 using KASSS.Services.Service.Common;
+using KASSS.Services.Services;
 using KASSS.Shared.Configuration;
 using KASSS.Shared.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -47,9 +49,15 @@ namespace KASSS.API
             services.AddControllers();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<ITokenService, TokenService>();
-            services.AddScoped(typeof(ICustomerService<>),typeof(CustomerService<>));
+            services.AddScoped(typeof(ICustomerService<,>),typeof(CustomerService<,>));
+            services.AddScoped(typeof(IButtonService<>), typeof(ButtonService<>));
+            services.AddScoped(typeof(ISliderService<>), typeof(SliderService<>));
+            services.AddScoped(typeof(IDeviceService<,>), typeof(DeviceService<,>));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped(typeof(IService<,>), typeof(Service<,>));
+            services.AddScoped(typeof(IDeviceRepository), typeof(DeviceRepository));
+            services.AddScoped(typeof(ICustomerRepository), typeof(CustomerRepository));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IService<,,>), typeof(Service<,,>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddDbContext<AppDbContext>(options =>

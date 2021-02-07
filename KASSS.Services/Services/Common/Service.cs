@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace KASSS.Services.Service.Common
 {
-    public class Service<TEntity,TDto> : IService<TEntity,TDto> where TEntity : class where TDto : class
+    public class Service<TEntity,TDto,TCreateDto> : IService<TEntity,TDto, TCreateDto> where TEntity : class where TDto : class where TCreateDto : class
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -23,8 +23,7 @@ namespace KASSS.Services.Service.Common
             _unitOfWork = unitOfWork;
             _genericRepository = genericRepository;
         }
-
-        public async Task<Response<TDto>> AddAsync(TDto entity)
+        public async Task<Response<TDto>> AddAsync(TCreateDto entity)
         {
             var newEntity = ObjectMapper.Mapper.Map<TEntity>(entity);
 

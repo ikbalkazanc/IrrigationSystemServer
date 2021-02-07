@@ -5,13 +5,11 @@ using KASSS.Core.UnitOfWork;
 using KASSS.Services.Service.Common;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace KASSS.Services.Service
 {
-    public class DeviceService<TDto> : Service<Device, TDto>, IDeviceService<TDto> where TDto : class
+    public class DeviceService<TDto, TCreateDto> : Service<Device, TDto, TCreateDto>, IDeviceService<TDto, TCreateDto> where TDto : class where TCreateDto : class
     {
         public DeviceService(IUnitOfWork unitOfWork, IRepository<Device> genericRepository) : base(unitOfWork, genericRepository)
         {

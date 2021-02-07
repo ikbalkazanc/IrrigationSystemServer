@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace KASSS.Core.Services
 {
-    public interface IDeviceService<TDto,TCreateDto> : IService<Device,TDto,TCreateDto> where TDto : class where TCreateDto : class
+    public interface ISliderService<TDto> : IService<Slider, TDto, TDto> where TDto : class
     {
-        Task<IEnumerable<Device>> GetAllPropertiesOfDeviceByDeviceIdAsync(int Id);
     }
 }

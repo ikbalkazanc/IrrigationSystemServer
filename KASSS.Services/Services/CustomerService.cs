@@ -10,17 +10,27 @@ using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace KASSS.Services.Service
 {
-    public class CustomerService<TDto> : Service<Customer, TDto>, ICustomerService<TDto> where TDto : class
+    public class CustomerService<TDto,TCreateDto> :  ICustomerService<TDto, TCreateDto> where TDto : class where TCreateDto : class
     {
         private readonly UserManager<Customer> _userManager;
-        public CustomerService(UserManager<Customer> userManager, IUnitOfWork unitofwork, IRepository<Customer> repository) : base(unitofwork, repository)
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IRepository<Customer> _genericRepository;
+        public CustomerService(UserManager<Customer> userManager, IUnitOfWork unitofwork, IRepository<Customer> repository) 
         {
             _userManager = userManager;
+            _unitOfWork = unitofwork;
+            _genericRepository = repository;
+        }
+
+        public Task<Response<TDto>> AddAsync(TCreateDto entity)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<Response<TDto>> CreateUserAsync(CreateCustomerDto createUserDto)
@@ -38,7 +48,22 @@ namespace KASSS.Services.Service
             return Response<TDto>.Success(ObjectMapper.Mapper.Map<TDto>(user), 200);
         }
 
+        public Task<Response<TDto>> CreateUserAsync(TCreateDto createUserDto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Response<IEnumerable<TDto>>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<IEnumerable<Device>> GetAllCustomerPropertiesByCustomerIdAsync(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Response<TDto>> GetByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -55,6 +80,19 @@ namespace KASSS.Services.Service
             return Response<TDto>.Success(ObjectMapper.Mapper.Map<TDto>(user), 200);
         }
 
+        public Task<Response<NoDataDto>> Remove(string id)
+        {
+            throw new NotImplementedException();
+        }
 
+        public Task<Response<NoDataDto>> Update(TDto entity, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Response<IEnumerable<TDto>> Where(Expression<Func<TDto, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

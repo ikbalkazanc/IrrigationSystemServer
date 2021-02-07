@@ -12,11 +12,4 @@
     <ProjectReference Include="..\KASSS.Shared\KASSS.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTOs\Device\" />
-    <Folder Include="DTOs\Button\" />
-    <Folder Include="DTOs\Location\" />
-    <Folder Include="DTOs\Sldier\" />
-  </ItemGroup>
-
 </Project>

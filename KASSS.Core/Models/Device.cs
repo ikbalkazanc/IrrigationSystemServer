@@ -6,6 +6,13 @@ namespace KASSS.Core.Models
 {
     public class Device : IDeleteable
     {
+        public Device()
+        {
+            /*
+            Buttons = new List<Button>();
+            Sliders = new List<Slider>();
+            Location = new Location();*/
+        }
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
